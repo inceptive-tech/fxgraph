@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<modelVersion>4.0.0</modelVersion>
+	    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.sirolf2009</groupId>
-	<artifactId>fxgraph</artifactId>
-	<name>fxgraph</name>
+    <groupId>com.sirolf2009</groupId>
+    <artifactId>fxgraph</artifactId>
+    <name>fxgraph</name>
 
-	<developers>
-		<developer>
-			<name>Roland</name>
-			<organizationUrl>https://stackoverflow.com/users/1844265/roland</organizationUrl>
-			<roles>
-				<role>creator</role>
-			</roles>
-		</developer>
-		<developer>
-			<name>sirolf2009</name>
-			<email>masterflappie@gmail.com</email>
-			<roles>
-				<role>maintainer</role>
-			</roles>
-		</developer>
-	</developers>
+    <developers>
+        <developer>
+            <name>Roland</name>
+            <organizationUrl>https://stackoverflow.com/users/1844265/roland</organizationUrl>
+            <roles>
+                <role>creator</role>
+            </roles>
+        </developer>
+        <developer>
+            <name>sirolf2009</name>
+            <email>masterflappie@gmail.com</email>
+            <roles>
+                <role>maintainer</role>
+            </roles>
+        </developer>
+    </developers>
 
-	<description>FXGraph is java graph visualizer.</description>
+    <description>FXGraph is java graph visualizer.</description>
 
-	<url>https://github.com/sirolf2009/fxgraph</url>
+    <url>https://github.com/sirolf2009/fxgraph</url>
 
-	<packaging>jar</packaging>
-	<version>0.0.4-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <version>0.0.4-SNAPSHOT</version>
 
-	<organization>
-		<!-- Used as the 'Vendor' for JNLP generation -->
-		<name>fxgraph</name>
-	</organization>
+    <organization>
+        <!-- Used as the 'Vendor' for JNLP generation -->
+        <name>fxgraph</name>
+    </organization>
 
-	<properties>
-		<slf4j.version>1.7.12</slf4j.version>
-		<log4j.version>1.2.17</log4j.version>
-	</properties>
+    <properties>
+        <slf4j.version>1.7.12</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <javaFX.version>18.0.2</javaFX.version>
+    </properties>
 
-	<build>
+    <build>
 
-		<finalName>fxgraph</finalName>
+        <finalName>fxgraph</finalName>
 
-		<plugins>
+        <plugins>
 
-			<plugin>
-				<groupId>com.zenjava</groupId>
-				<artifactId>javafx-maven-plugin</artifactId>
-				<version>8.1.5</version>
-				<configuration>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.1.5</version>
+                <configuration>
 
-					<mainClass>com.fxgraph.fxgraph.MainApp</mainClass>
+                    <mainClass>com.fxgraph.fxgraph.MainApp</mainClass>
 
-					<!-- only required if signing the jar file -->
-					<keyStoreAlias>example-user</keyStoreAlias>
-					<keyStorePassword>example-password</keyStorePassword>
-					<allPermissions>true</allPermissions>
+                    <!-- only required if signing the jar file -->
+                    <keyStoreAlias>example-user</keyStoreAlias>
+                    <keyStorePassword>example-password</keyStorePassword>
+                    <allPermissions>true</allPermissions>
 
-				</configuration>
-			</plugin>
+                </configuration>
+            </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>17</release>     
+                </configuration>
+            </plugin>
 
-		</plugins>
-	</build>
+        </plugins>
+    </build>
 
-	<licenses>
-		<license>
-			<name>WTFPL</name>
-			<url>https://en.wikipedia.org/wiki/WTFPL</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
+    <licenses>
+        <license>
+            <name>WTFPL</name>
+            <url>https://en.wikipedia.org/wiki/WTFPL</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-	<scm>
-		<connection>scm:git:git@github.com:sirolf2009/fxgraph.git</connection>
-		<developerConnection>scm:git:git@github.com:sirolf2009/fxgraph.git</developerConnection>
-		<url>scm:git:git@github.com:sirolf2009/fxgraph.git</url>
-	</scm>
+    <scm>
+        <connection>scm:git:git@github.com:sirolf2009/fxgraph.git</connection>
+        <developerConnection>scm:git:git@github.com:sirolf2009/fxgraph.git</developerConnection>
+        <url>scm:git:git@github.com:sirolf2009/fxgraph.git</url>
+    </scm>
 
-<distributionManagement>
+    <distributionManagement>
         <snapshotRepository>
             <id>nexus-snapshots</id>
             <url>${nexusSnapshotsURL}</url>
@@ -101,76 +101,114 @@
         </repository>
     </distributionManagement>
 
-	<profiles>
-		<profile>
-			<id>release</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.sonatype.plugins</groupId>
-						<artifactId>nexus-staging-maven-plugin</artifactId>
-						<version>1.6.7</version>
-						<extensions>true</extensions>
-						<configuration>
-							<serverId>ossrh</serverId>
-							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-							<autoReleaseAfterClose>true</autoReleaseAfterClose>
-						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<version>2.2.1</version>
-						<executions>
-							<execution>
-								<id>attach-sources</id>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.9.1</version>
-						<executions>
-							<execution>
-								<id>attach-javadocs</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-release-plugin</artifactId>
-						<version>2.5.3</version>
-						<configuration>
-							<autoVersionSubmodules>true</autoVersionSubmodules>
-							<useReleaseProfile>false</useReleaseProfile>
-							<releaseProfiles>release</releaseProfiles>
-							<goals>deploy</goals>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.sonatype.plugins</groupId>
+                        <artifactId>nexus-staging-maven-plugin</artifactId>
+                        <version>1.6.7</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <serverId>ossrh</serverId>
+                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>2.5.3</version>
+                        <configuration>
+                            <autoVersionSubmodules>true</autoVersionSubmodules>
+                            <useReleaseProfile>false</useReleaseProfile>
+                            <releaseProfiles>release</releaseProfiles>
+                            <goals>deploy</goals>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.13.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.abego.treelayout</groupId>
-			<artifactId>org.abego.treelayout.core</artifactId>
-			<version>1.0.3</version>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.abego.treelayout</groupId>
+            <artifactId>org.abego.treelayout.core</artifactId>
+            <version>1.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${javaFX.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${javaFX.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics </artifactId>
+            <version>${javaFX.version}</version>
+        </dependency>        
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics </artifactId>
+            <version>${javaFX.version}</version>
+            <classifier>win</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics </artifactId>
+            <version>${javaFX.version}</version>
+            <classifier>linux</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics </artifactId>
+            <version>${javaFX.version}</version>
+            <classifier>mac</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-swing </artifactId>
+            <version>${javaFX.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
