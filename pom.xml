@@ -90,16 +90,16 @@
 		<url>scm:git:git@github.com:sirolf2009/fxgraph.git</url>
 	</scm>
 
-<!--	<distributionManagement>
-		<snapshotRepository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
-	</distributionManagement>-->
+<distributionManagement>
+        <snapshotRepository>
+            <id>nexus-snapshots</id>
+            <url>${nexusSnapshotsURL}</url>
+        </snapshotRepository>
+        <repository>
+            <id>nexus</id>
+            <url>${nexusRepositoryURL}</url>
+        </repository>
+    </distributionManagement>
 
 	<profiles>
 		<profile>
